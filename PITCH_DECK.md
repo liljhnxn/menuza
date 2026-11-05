@@ -1,8 +1,8 @@
 # Menuza — Pitch Deck
 
 > **Decentralized, Serverless Digital Menus for the Modern Restaurant**  
-> *Built on Botchain Testnet (Chain ID: 968)*  
-> *Contract: `0x9184973A15fA0eBDcD82f56fF6Da6353b7103CE4`*  
+> *Built on Botchain Mainnet (Chain ID: 677)*  
+> *Contract: `0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19`*  
 > *Deck Version: 1.0*
 
 ---
@@ -47,7 +47,7 @@
 ## Slide 5: Technical Highlights
 * **Solidity Smart Contract (`Menuza.sol`)**:
   * Tested with 18 automated Hardhat unit tests (100% passing).
-  * Deployed & verified on BohrScan: `0x9184973A15fA0eBDcD82f56fF6Da6353b7103CE4`.
+  * Deployed & verified on BotchainScan: `0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19`.
   * Gas-optimized custom errors: `EmptyItemName`, `InvalidPrice`, `ItemNotFound`, `Unauthorized`.
 * **Frontend Architecture**:
   * Next.js 14 App Router, TypeScript, Tailwind CSS.
@@ -96,6 +96,7 @@
 
 ## Slide 10: Summary & Links
 * **Live App**: [Menuza Web App](https://github.com/liljhnxn/menuza)
-* **Contract Explorer**: [BohrScan Verified Contract](https://scan.bohr.life/address/0x9184973A15fA0eBDcD82f56fF6Da6353b7103CE4#code)
+* **Contract Explorer**: [BotchainScan Verified Contract](https://scan.botchain.ai/address/0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19#code)
 * **GitHub Repository**: [github.com/liljhnxn/menuza](https://github.com/liljhnxn/menuza)
 * **Contact**: [johnsonferanmi408@gmail.com](mailto:johnsonferanmi408@gmail.com)
+

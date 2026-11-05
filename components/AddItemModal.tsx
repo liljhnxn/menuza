@@ -183,10 +183,10 @@ export function AddItemModal({ isOpen, onClose, contractAddress, onItemAdded }: 
               />
             </div>
 
-            {/* Price (BOHR) */}
+            {/* Price (BOT) */}
             <div>
               <label className="block text-xs font-semibold text-cream-300 uppercase tracking-wider mb-1.5">
-                Price (BOHR) <span className="text-terracotta-400">*</span>
+                Price (BOT) <span className="text-terracotta-400">*</span>
               </label>
               <div className="relative">
                 <input
@@ -201,7 +201,7 @@ export function AddItemModal({ isOpen, onClose, contractAddress, onItemAdded }: 
                   className="w-full bg-charcoal-850 border border-charcoal-700 rounded-xl px-4 py-2.5 text-sm text-cream-50 font-mono placeholder-cream-500 focus:outline-none focus:border-terracotta-500 transition-colors"
                 />
                 <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-mono font-semibold text-cream-400 pointer-events-none">
-                  BOHR
+                  BOT
                 </span>
               </div>
             </div>

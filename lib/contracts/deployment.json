@@ -1,6 +1,8 @@
 {
-  "address": "0x9184973A15fA0eBDcD82f56fF6Da6353b7103CE4",
-  "network": "Botchain Testnet",
-  "chainId": 968,
-  "deployedAt": "2026-11-02T11:03:33.756Z"
+  "address": "0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19",
+  "network": "Botchain Mainnet",
+  "chainId": 677,
+  "token": "BOT",
+  "explorer": "https://scan.botchain.ai",
+  "deployedAt": "2026-11-05T13:43:43.648Z"
 }

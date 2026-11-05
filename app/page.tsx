@@ -127,7 +127,7 @@ export default function Home() {
               <span className="w-2 h-2 rounded-full bg-terracotta-500"></span>
               <span className="font-medium">Decentralized Dining Platform</span>
               <span className="text-charcoal-600">•</span>
-              <span className="text-cream-400">Botchain Testnet (968)</span>
+              <span className="text-cream-400">Botchain Mainnet (677)</span>
             </div>
 
             {/* Main Headline */}
@@ -264,16 +264,16 @@ export default function Home() {
 
             <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-cream-400">
               <a
-                href="https://scan.bohr.life"
+                href={process.env.NEXT_PUBLIC_BLOCK_EXPLORER || "https://scan.botchain.ai"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cream-200 transition-colors flex items-center space-x-1"
               >
-                <span>BohrScan Explorer</span>
+                <span>BotchainScan Explorer</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
               <span className="text-charcoal-700">•</span>
-              <span>Botchain Testnet (Chain ID 968)</span>
+              <span>Botchain Mainnet (Chain ID 677)</span>
               <span className="text-charcoal-700">•</span>
               <span className="text-cream-500">Non-custodial & Serverless</span>
             </div>

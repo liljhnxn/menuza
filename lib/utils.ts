@@ -1,16 +1,14 @@
 import { formatEther } from "viem";
 
-export function formatBohrPrice(weiPrice: bigint | undefined | null): string {
-  if (weiPrice === undefined || weiPrice === null) return "0.00 BOHR";
+export function formatBohrPrice(weiPrice: bigint | undefined | null, symbol = "BOT"): string {
+  if (weiPrice === undefined || weiPrice === null) return `0.00 ${symbol}`;
   try {
     const formatted = formatEther(weiPrice);
-    // Trim unnecessary trailing zeros if decimal is long
     const num = parseFloat(formatted);
-    if (isNaN(num)) return "0 BOHR";
-    // If small decimal or whole number
-    return `${formatted} BOHR`;
+    if (isNaN(num)) return `0 ${symbol}`;
+    return `${formatted} ${symbol}`;
   } catch {
-    return "0 BOHR";
+    return `0 ${symbol}`;
   }
 }
 
@@ -34,13 +32,14 @@ export function formatTimestamp(timestamp: bigint | number): string {
   }
 }
 
-export function getExplorerTxUrl(txHash: string): string {
-  const base = process.env.NEXT_PUBLIC_BLOCK_EXPLORER || "https://scan.bohr.life";
+export function getExplorerTxUrl(txHash: string | undefined): string {
+  if (!txHash) return "#";
+  const base = process.env.NEXT_PUBLIC_BLOCK_EXPLORER || "https://scan.botchain.ai";
   return `${base.replace(/\/$/, "")}/tx/${txHash}`;
 }
 
-export function getExplorerAddressUrl(address: string): string {
-  const base = process.env.NEXT_PUBLIC_BLOCK_EXPLORER || "https://scan.bohr.life";
+export function getExplorerAddressUrl(address: string | undefined): string {
+  if (!address) return "#";
+  const base = process.env.NEXT_PUBLIC_BLOCK_EXPLORER || "https://scan.botchain.ai";
   return `${base.replace(/\/$/, "")}/address/${address}`;
 }
-

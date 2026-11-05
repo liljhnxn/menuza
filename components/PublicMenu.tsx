@@ -54,7 +54,7 @@ export function PublicMenu({ items, isLoading, onAddNewClick, isOwnerConnected }
               Live Digital Menu
             </h2>
             <p className="text-sm text-cream-400 mt-1 max-w-xl">
-              Fresh on-chain menu records verified directly on Botchain Testnet. Open for everyone to browse.
+              Fresh on-chain menu records verified directly on Botchain Mainnet. Open for everyone to browse.
             </p>
           </div>
 
@@ -237,7 +237,7 @@ export function PublicMenu({ items, isLoading, onAddNewClick, isOwnerConnected }
                       href={getExplorerAddressUrl(item.owner)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      title="View vendor on BohrScan"
+                      title="View vendor on BotchainScan"
                       className="flex items-center space-x-1 text-[11px] font-mono text-cream-500 hover:text-cream-300 transition-colors bg-charcoal-800/80 px-2.5 py-1 rounded-lg border border-charcoal-700/60"
                     >
                       <span>Vendor: {formatAddress(item.owner)}</span>

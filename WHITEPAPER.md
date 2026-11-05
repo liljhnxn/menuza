@@ -3,8 +3,9 @@
 
 *Version 1.0 — November 2026*  
 *Author: Menuza Core Team*  
-*Network: Botchain Testnet (Chain ID: 968)*  
-*Contract Address: `0x9184973A15fA0eBDcD82f56fF6Da6353b7103CE4`*  
+*Network: Botchain Mainnet (Chain ID: 677)*  
+*Contract Address: `0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19`*  
+*Explorer: [https://scan.botchain.ai/address/0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19#code](https://scan.botchain.ai/address/0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19#code)*  
 *Repository: [github.com/liljhnxn/menuza](https://github.com/liljhnxn/menuza)*  
 
 ---
@@ -122,3 +123,4 @@ Menuza is intentionally designed as **public good infrastructure** for hospitali
 ## 8. Conclusion
 
 Menuza demonstrates that Web3 technology can solve tangible real-world business problems without burdening mainstream consumers. By leveraging Botchain's performance and security, Menuza offers restaurants absolute data sovereignty, permanent uptime, and zero recurring overhead.
+

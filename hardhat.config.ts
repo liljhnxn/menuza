@@ -10,7 +10,8 @@ if (fs.existsSync(path.resolve(process.cwd(), ".env.local"))) {
 }
 dotenv.config();
 
-const BOTCHAIN_RPC_URL = process.env.BOTCHAIN_RPC_URL || process.env.NEXT_PUBLIC_RPC_URL || "https://rpc.bohr.life";
+const MAINNET_RPC_URL = process.env.BOTCHAIN_MAINNET_RPC_URL || "https://rpc.botchain.ai";
+const TESTNET_RPC_URL = process.env.BOTCHAIN_RPC_URL || "https://rpc.bohr.life";
 
 function getPrivateKey(): string[] {
   const pk = process.env.PRIVATE_KEY?.trim();
@@ -33,17 +34,32 @@ const config: HardhatUserConfig = {
     hardhat: {
       chainId: 31337,
     },
+    botchainMainnet: {
+      url: MAINNET_RPC_URL,
+      chainId: 677,
+      accounts: getPrivateKey(),
+      gasPrice: 20000000000, // 20 gwei - minimum standard to prevent gas wastage
+    },
     botchain: {
-      url: BOTCHAIN_RPC_URL,
+      url: TESTNET_RPC_URL,
       chainId: 968,
       accounts: getPrivateKey(),
     },
   },
   etherscan: {
     apiKey: {
+      botchainMainnet: "empty",
       botchain: "empty",
     },
     customChains: [
+      {
+        network: "botchainMainnet",
+        chainId: 677,
+        urls: {
+          apiURL: "https://scan.botchain.ai/api",
+          browserURL: "https://scan.botchain.ai",
+        },
+      },
       {
         network: "botchain",
         chainId: 968,

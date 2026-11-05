@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import { useAccount, useConnect, useDisconnect, useSwitchChain, useChainId } from "wagmi";
-import { botchainTestnet } from "@/lib/chains";
-import { formatAddress } from "@/lib/utils";
+import { botchainMainnet } from "@/lib/chains";
+import { formatAddress, getExplorerAddressUrl } from "@/lib/utils";
 import { Utensils, Wallet, LogOut, ChevronDown, AlertCircle, ChefHat } from "lucide-react";
 
 interface HeaderProps {
@@ -19,7 +19,7 @@ export function Header({ onOpenOwnerPortal, ownedCount = 0 }: HeaderProps) {
   const currentChainId = useChainId();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const isWrongNetwork = isConnected && currentChainId !== botchainTestnet.id;
+  const isWrongNetwork = isConnected && currentChainId !== botchainMainnet.id;
 
   const handleConnect = () => {
     // Find injected connector (MetaMask)
@@ -43,7 +43,7 @@ export function Header({ onOpenOwnerPortal, ownedCount = 0 }: HeaderProps) {
                 Menuza
               </span>
               <span className="hidden sm:inline-flex text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full bg-charcoal-800 border border-charcoal-700 text-cream-400">
-                Web3
+                Mainnet
               </span>
             </div>
             <p className="text-xs text-cream-400 font-sans hidden xs:block">
@@ -57,16 +57,16 @@ export function Header({ onOpenOwnerPortal, ownedCount = 0 }: HeaderProps) {
           {/* Wrong Network Warning */}
           {isWrongNetwork ? (
             <button
-              onClick={() => switchChain({ chainId: botchainTestnet.id })}
+              onClick={() => switchChain({ chainId: botchainMainnet.id })}
               className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-red-950/80 border border-red-800/80 text-red-200 text-xs font-medium hover:bg-red-900/90 transition-colors"
             >
               <AlertCircle className="w-3.5 h-3.5 text-red-400" />
-              <span>Switch to Botchain</span>
+              <span>Switch to Botchain Mainnet</span>
             </button>
           ) : (
             <div className="hidden md:flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-charcoal-850 border border-charcoal-700 text-xs text-cream-400">
               <span className="w-2 h-2 rounded-full bg-sage-500 animate-pulse"></span>
-              <span>Botchain Testnet</span>
+              <span>Botchain Mainnet (677)</span>
             </div>
           )}
 
@@ -123,12 +123,12 @@ export function Header({ onOpenOwnerPortal, ownedCount = 0 }: HeaderProps) {
                     </div>
 
                     <a
-                      href={`https://scan.bohr.life/address/${address}`}
+                      href={getExplorerAddressUrl(address)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-between w-full px-3 py-2 text-xs text-cream-300 hover:bg-charcoal-800 rounded-lg transition-colors"
                     >
-                      <span>View on BohrScan</span>
+                      <span>View on BotchainScan</span>
                       <span className="text-[10px] text-cream-500">↗</span>
                     </a>
 

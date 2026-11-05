@@ -30,11 +30,13 @@ Menuza bridges culinary hospitality and Web3 decentralization:
 
 | Property | Value |
 | :--- | :--- |
-| **Network Name** | Botchain Testnet |
-| **Chain ID** | `968` |
-| **RPC URL** | `https://rpc.bohr.life` |
-| **Currency Symbol** | `BOHR` |
-| **Block Explorer** | [https://scan.bohr.life](https://scan.bohr.life) |
+| **Network Name** | Botchain Mainnet |
+| **Chain ID** | `677` |
+| **RPC URL** | `https://rpc.botchain.ai` |
+| **Currency Symbol** | `BOT` |
+| **Total Supply** | 150 Million |
+| **Block Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) |
+| **Verified Contract** | [`0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19`](https://scan.botchain.ai/address/0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19#code) |
 
 ---
 
