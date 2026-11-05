@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { MenuItem } from "@/lib/types";
-import { formatBohrPrice, formatAddress, getExplorerAddressUrl } from "@/lib/utils";
+import { formatPrice, formatAddress, getExplorerAddressUrl } from "@/lib/utils";
 import { Search, Tag, ExternalLink, Sparkles, CheckCircle2, XCircle } from "lucide-react";
 
 interface PublicMenuProps {
@@ -229,7 +229,7 @@ export function PublicMenu({ items, isLoading, onAddNewClick, isOwnerConnected }
                         Price
                       </span>
                       <span className="text-lg font-bold font-mono text-terracotta-400">
-                        {formatBohrPrice(item.price)}
+                        {formatPrice(item.price)}
                       </span>
                     </div>
 

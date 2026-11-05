@@ -5,8 +5,8 @@ import { Providers } from "@/components/Providers";
 export const metadata: Metadata = {
   title: "Menuza — On-Chain Digital Menu for Restaurants",
   description:
-    "Decentralized, live digital menu application for restaurants, cafés and food vendors powered by Botchain Testnet.",
-  keywords: ["Web3", "Restaurant Menu", "Botchain", "Solidity", "Digital Menu", "Decentralized"],
+    "Decentralized, live digital menu application for restaurants, cafés and food vendors powered by Botchain Mainnet.",
+  keywords: ["Web3", "Restaurant Menu", "Botchain", "Solidity", "Digital Menu", "Decentralized", "BOT Chain"],
   icons: {
     icon: "/favicon.svg",
     apple: "/favicon.svg",

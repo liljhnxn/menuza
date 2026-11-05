@@ -22,30 +22,4 @@ export const botchainMainnet = defineChain({
       url: "https://scan.botchain.ai",
     },
   },
-  testnet: false,
-});
-
-export const botchainTestnet = defineChain({
-  id: 968,
-  name: "Botchain Testnet",
-  nativeCurrency: {
-    name: "Bohr",
-    symbol: "BOHR",
-    decimals: 18,
-  },
-  rpcUrls: {
-    default: {
-      http: ["https://rpc.bohr.life"],
-    },
-    public: {
-      http: ["https://rpc.bohr.life"],
-    },
-  },
-  blockExplorers: {
-    default: {
-      name: "BohrScan",
-      url: "https://scan.bohr.life",
-    },
-  },
-  testnet: true,
 });

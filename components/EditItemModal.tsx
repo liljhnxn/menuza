@@ -147,7 +147,7 @@ export function EditItemModal({
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-1.5 text-xs text-terracotta-400 hover:underline mt-3"
               >
-                <span>View BohrScan receipt</span>
+                <span>View BotchainScan receipt</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             )}

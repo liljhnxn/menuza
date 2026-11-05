@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useAccount, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
 import { MenuItem } from "@/lib/types";
-import { formatBohrPrice, formatTimestamp } from "@/lib/utils";
+import { formatPrice, formatTimestamp } from "@/lib/utils";
 import { MENUZA_ABI } from "@/lib/contracts/abi";
 import {
   ChefHat,
@@ -207,7 +207,7 @@ export function OwnerDashboard({
 
                     <div className="flex items-center space-x-4 mt-2.5 text-xs">
                       <span className="font-mono font-bold text-terracotta-400">
-                        {formatBohrPrice(item.price)}
+                        {formatPrice(item.price)}
                       </span>
                       <span className="text-charcoal-600">•</span>
                       <span className="text-cream-500">

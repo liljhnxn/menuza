@@ -103,7 +103,7 @@ export function AddItemModal({ isOpen, onClose, contractAddress, onItemAdded }: 
             Add New Menu Item
           </h3>
           <p className="text-xs text-cream-400 mt-1">
-            Publish a new dish, drink, or dessert on Botchain Testnet.
+            Publish a new dish, drink, or dessert on Botchain Mainnet.
           </p>
         </div>
 
@@ -124,7 +124,7 @@ export function AddItemModal({ isOpen, onClose, contractAddress, onItemAdded }: 
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-1.5 text-xs text-terracotta-400 hover:underline mt-3"
               >
-                <span>View BohrScan receipt</span>
+                <span>View BotchainScan receipt</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             )}

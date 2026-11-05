@@ -10,12 +10,10 @@ async function main() {
   }
 
   const network = await ethers.provider.getNetwork();
-  const chainId = Number(network.chainId);
-  const isMainnet = chainId === 677;
-
-  const networkName = isMainnet ? "Botchain Mainnet" : "Botchain Testnet";
-  const tokenSymbol = isMainnet ? "BOT" : "BOHR";
-  const explorerUrl = isMainnet ? "https://scan.botchain.ai" : "https://scan.bohr.life";
+  const chainId = Number(network.chainId) || 677;
+  const networkName = "Botchain Mainnet";
+  const tokenSymbol = "BOT";
+  const explorerUrl = "https://scan.botchain.ai";
 
   console.log("==========================================");
   console.log(`Deploying Menuza to ${networkName} (Chain ID: ${chainId})...`);
@@ -31,7 +29,6 @@ async function main() {
 
   const MenuzaFactory = await ethers.getContractFactory("Menuza");
 
-  // Deploy with exact gasPrice to ensure no overpaying
   const menuza = await MenuzaFactory.deploy({
     gasPrice: gasPrice,
   });
@@ -90,7 +87,7 @@ async function main() {
     envContent = envContent.replace(/NEXT_PUBLIC_CHAIN_ID=.*/, `NEXT_PUBLIC_CHAIN_ID=${chainId}`);
     envContent = envContent.replace(
       /NEXT_PUBLIC_RPC_URL=.*/,
-      `NEXT_PUBLIC_RPC_URL=${isMainnet ? "https://rpc.botchain.ai" : "https://rpc.bohr.life"}`
+      `NEXT_PUBLIC_RPC_URL=https://rpc.botchain.ai`
     );
     envContent = envContent.replace(
       /NEXT_PUBLIC_BLOCK_EXPLORER=.*/,

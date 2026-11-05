@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { useAccount, useConnect, useDisconnect, useSwitchChain, useChainId } from "wagmi";
 import { botchainMainnet } from "@/lib/chains";
 import { formatAddress, getExplorerAddressUrl } from "@/lib/utils";
-import { Utensils, Wallet, LogOut, ChevronDown, AlertCircle, ChefHat } from "lucide-react";
+import { Utensils, Wallet, LogOut, ChevronDown, AlertCircle, ChefHat, ExternalLink, Globe } from "lucide-react";
 
 interface HeaderProps {
   onOpenOwnerPortal?: () => void;
@@ -22,7 +23,6 @@ export function Header({ onOpenOwnerPortal, ownedCount = 0 }: HeaderProps) {
   const isWrongNetwork = isConnected && currentChainId !== botchainMainnet.id;
 
   const handleConnect = () => {
-    // Find injected connector (MetaMask)
     const connector = connectors[0];
     if (connector) {
       connect({ connector });
@@ -32,7 +32,7 @@ export function Header({ onOpenOwnerPortal, ownedCount = 0 }: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-charcoal-700/80 bg-charcoal-900/90 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-        {/* Logo and Tagline */}
+        {/* Left: Menuza Logo and Tagline */}
         <div className="flex items-center space-x-3 sm:space-x-4">
           <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-terracotta-500 to-terracotta-600 flex items-center justify-center shadow-lg shadow-terracotta-500/20 text-charcoal-950">
             <Utensils className="w-6 h-6 stroke-[2.2]" />
@@ -52,6 +52,32 @@ export function Header({ onOpenOwnerPortal, ownedCount = 0 }: HeaderProps) {
           </div>
         </div>
 
+        {/* Center: BOT Chain Direct Ecosystem Quick Links */}
+        <div className="hidden lg:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-charcoal-850 border border-charcoal-700/70 text-xs">
+          <a
+            href="https://botchain.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-cream-300 hover:text-cream-50 hover:bg-charcoal-800 transition-colors"
+          >
+            <div className="w-4 h-4 relative rounded overflow-hidden flex-shrink-0">
+              <Image src="/botchain-logo.png" alt="BOT Chain" fill className="object-cover" />
+            </div>
+            <span className="font-semibold text-cream-100">BOT Chain</span>
+            <Globe className="w-3 h-3 text-cream-400" />
+          </a>
+          <span className="text-charcoal-600">•</span>
+          <a
+            href="https://scan.botchain.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-1 px-2.5 py-1 rounded-full text-cream-400 hover:text-cream-200 hover:bg-charcoal-800 transition-colors"
+          >
+            <span>Explorer</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
+        </div>
+
         {/* Right Action Area */}
         <div className="flex items-center space-x-2 sm:space-x-3">
           {/* Wrong Network Warning */}
@@ -64,7 +90,7 @@ export function Header({ onOpenOwnerPortal, ownedCount = 0 }: HeaderProps) {
               <span>Switch to Botchain Mainnet</span>
             </button>
           ) : (
-            <div className="hidden md:flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-charcoal-850 border border-charcoal-700 text-xs text-cream-400">
+            <div className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-charcoal-850 border border-charcoal-700 text-xs text-cream-400">
               <span className="w-2 h-2 rounded-full bg-sage-500 animate-pulse"></span>
               <span>Botchain Mainnet (677)</span>
             </div>
@@ -152,4 +178,3 @@ export function Header({ onOpenOwnerPortal, ownedCount = 0 }: HeaderProps) {
     </header>
   );
 }
-

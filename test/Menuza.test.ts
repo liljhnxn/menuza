@@ -14,7 +14,7 @@ describe("Menuza Contract", function () {
   const sampleItem = {
     name: "Truffle Tagliatelle",
     description: "Handmade pasta, black truffle shavings, aged parmesan crema",
-    price: ethers.parseEther("0.02"), // 0.02 ETH / BOHR
+    price: ethers.parseEther("0.02"), // 0.02 BOT
     category: "Mains",
   };
 

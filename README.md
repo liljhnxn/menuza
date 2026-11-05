@@ -1,7 +1,7 @@
 # Menuza 🍽️
 
 > **Your menu, made digital.**  
-> A simple, lightweight, on-chain digital menu application for restaurants, cafés, and food vendors powered by **Botchain Testnet**.
+> A simple, lightweight, on-chain digital menu application for restaurants, cafés, and food vendors powered by **BOT Chain Mainnet**.
 
 ---
 
@@ -10,7 +10,7 @@
 Menuza bridges culinary hospitality and Web3 decentralization:
 - **For Customers**: Browse menus, live prices, and instant availability **without connecting a wallet**.
 - **For Restaurant Owners**: Connect with MetaMask to publish new dishes, adjust pricing, toggle item availability (Available vs. Sold Out), and delist items on-chain with cryptographic ownership.
-- **Serverless & Non-Custodial**: No centralized database, no backend API, no payment gateways or tokens. All menu items live directly on Botchain Testnet.
+- **Serverless & Non-Custodial**: No centralized database, no backend API, no payment gateways or tokens. All menu items live directly on BOT Chain Mainnet.
 
 ---
 
@@ -26,16 +26,17 @@ Menuza bridges culinary hospitality and Web3 decentralization:
 
 ---
 
-## ⛓️ Blockchain Configuration
+## ⛓️ Blockchain Configuration (Mainnet)
 
 | Property | Value |
 | :--- | :--- |
-| **Network Name** | Botchain Mainnet |
+| **Network Name** | **Botchain Mainnet** |
 | **Chain ID** | `677` |
 | **RPC URL** | `https://rpc.botchain.ai` |
 | **Currency Symbol** | `BOT` |
 | **Total Supply** | 150 Million |
-| **Block Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) |
+| **BOT Chain Website** | [https://botchain.ai](https://botchain.ai) |
+| **BOT Chain Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) |
 | **Verified Contract** | [`0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19`](https://scan.botchain.ai/address/0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19#code) |
 
 ---
@@ -47,11 +48,11 @@ Menuza/
 ├── app/
 │   ├── globals.css         # Restaurant charcoal & warm cream styling
 │   ├── layout.tsx          # Root layout and metadata
-│   └── page.tsx            # One-page application (Hero, Public Menu, Dashboard)
+│   └── page.tsx            # One-page application (Hero, Public Menu, Owner Portal, BOT Chain section)
 ├── components/
-│   ├── AddItemModal.tsx     # Modal to add dishes with name, description, price, category
+│   ├── AddItemModal.tsx     # Modal to add dishes with name, description, price (BOT), category
 │   ├── EditItemModal.tsx    # Modal to update dish details & price
-│   ├── Header.tsx           # Logo, Botchain network badge & wallet connector
+│   ├── Header.tsx           # Logo, BOT Chain ecosystem links & wallet connector
 │   ├── OwnerDashboard.tsx   # Metrics & item management for connected restaurant owners
 │   ├── Providers.tsx        # Wagmi and React Query providers
 │   ├── PublicMenu.tsx       # Public menu browsing with category filter & search
@@ -59,17 +60,18 @@ Menuza/
 ├── contracts/
 │   └── Menuza.sol           # Gas-efficient Solidity contract
 ├── lib/
-│   ├── chains.ts            # Botchain Testnet Viem definition (Chain ID 968)
+│   ├── chains.ts            # Botchain Mainnet Viem definition (Chain ID 677)
 │   ├── types.ts             # TypeScript interfaces for MenuItem
 │   ├── utils.ts             # Price, address, and date formatting helpers
 │   ├── wagmi.ts             # Wagmi client configuration
 │   └── contracts/
-│       └── abi.ts           # Typed ABI definition for Menuza
+│       ├── abi.ts           # Typed ABI definition for Menuza
+│       └── deployment.json  # Mainnet deployment metadata
 ├── scripts/
-│   └── deploy.ts            # Hardhat deployment script for Botchain
+│   └── deploy.ts            # Hardhat deployment script for Botchain Mainnet
 ├── test/
 │   └── Menuza.test.ts       # Comprehensive smart contract test suite (18 tests)
-├── hardhat.config.ts        # Hardhat configuration for Botchain Testnet
+├── hardhat.config.ts        # Hardhat configuration for Botchain Mainnet
 ├── tailwind.config.ts       # Custom restaurant color scheme
 ├── tsconfig.json            # TypeScript configuration
 └── package.json
@@ -105,28 +107,23 @@ The `Menuza.sol` contract contains all digital menu logic:
 - MetaMask browser extension
 
 ### 2. Installation
-Clone the repository and install dependencies:
 ```bash
-git clone <repo-url>
+git clone https://github.com/liljhnxn/menuza.git
 cd Menuza
 npm install --legacy-peer-deps
 ```
 
 ### 3. Environment Setup
-Copy the example environment file:
 ```bash
 cp .env.example .env.local
 ```
 
-Edit `.env.local`:
+`.env.local` contents:
 ```env
-NEXT_PUBLIC_CHAIN_ID=968
-NEXT_PUBLIC_RPC_URL=https://rpc.bohr.life
-NEXT_PUBLIC_BLOCK_EXPLORER=https://scan.bohr.life
-NEXT_PUBLIC_MENUZA_CONTRACT_ADDRESS=<YOUR_DEPLOYED_CONTRACT_ADDRESS>
-
-# For contract deployment:
-PRIVATE_KEY=your_private_key_here
+NEXT_PUBLIC_CHAIN_ID=677
+NEXT_PUBLIC_RPC_URL=https://rpc.botchain.ai
+NEXT_PUBLIC_BLOCK_EXPLORER=https://scan.botchain.ai
+NEXT_PUBLIC_MENUZA_CONTRACT_ADDRESS=0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19
 ```
 
 ---
@@ -138,29 +135,19 @@ Run the full smart contract test suite covering 18 scenarios:
 npm run test
 ```
 
-All tests execute against an in-memory EVM verifying:
-- Menu item registration
-- Empty name and zero price rejection
-- Incremental ID allocation
-- Owner-only editing and error guards
-- Owner-only availability status toggling
-- Owner-only item removal and removal guards
-- Public querying (`getItem`, `getAllItems`, `getItemsByOwner`)
-
 ---
 
-## 🚢 Deployment to Botchain Testnet
+## 🚢 Deployment to Botchain Mainnet
 
-1. Ensure your deployer wallet has testnet funds in `BOHR`.
-2. Set your `PRIVATE_KEY` in `.env.local` or environment variable:
+1. Ensure your deployer wallet has funds in `BOT`.
+2. Run the deployment script:
    ```bash
-   export PRIVATE_KEY="0x..."
+   npx hardhat run scripts/deploy.ts --network botchainMainnet
    ```
-3. Run the deployment script:
+3. Verify on BotchainScan:
    ```bash
-   npm run deploy
+   npx hardhat verify --network botchainMainnet <CONTRACT_ADDRESS>
    ```
-4. Copy the resulting contract address and add it to `NEXT_PUBLIC_MENUZA_CONTRACT_ADDRESS` in `.env.local`.
 
 ---
 
@@ -180,17 +167,15 @@ npm run start
 
 ---
 
-## 🦊 Adding Botchain Testnet to MetaMask
+## 🦊 Adding Botchain Mainnet to MetaMask
 
-If MetaMask does not switch automatically:
-- **Network Name**: Botchain Testnet
-- **New RPC URL**: `https://rpc.bohr.life`
-- **Chain ID**: `968`
-- **Currency Symbol**: `BOHR`
-- **Block Explorer URL**: `https://scan.bohr.life`
+- **Network Name**: Botchain Mainnet
+- **New RPC URL**: `https://rpc.botchain.ai`
+- **Chain ID**: `677`
+- **Currency Symbol**: `BOT`
+- **Block Explorer URL**: `https://scan.botchain.ai`
 
 ---
 
 ## 📄 License
 MIT
-

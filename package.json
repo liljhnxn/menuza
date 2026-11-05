@@ -2,7 +2,7 @@
   "name": "menuza",
   "version": "1.0.0",
   "private": true,
-  "description": "On-chain digital menu application for restaurants, cafes and food vendors on Botchain Testnet",
+  "description": "On-chain digital menu application for restaurants, cafes and food vendors on BOT Chain Mainnet",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

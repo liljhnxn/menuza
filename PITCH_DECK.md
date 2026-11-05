@@ -1,8 +1,10 @@
 # Menuza — Pitch Deck
 
 > **Decentralized, Serverless Digital Menus for the Modern Restaurant**  
-> *Built on Botchain Mainnet (Chain ID: 677)*  
+> *Built on BOT Chain Mainnet (Chain ID: 677)*  
 > *Contract: `0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19`*  
+> *BOT Chain Website: https://botchain.ai*  
+> *BOT Chain Explorer: https://scan.botchain.ai*  
 > *Deck Version: 1.0*
 
 ---
@@ -12,7 +14,7 @@
 * **Subtitle**: Your Menu, Made Digital. Verified On-Chain.
 * **Tagline**: The zero-friction, serverless digital menu protocol for restaurants, cafés, and food vendors.
 * **Presenter**: Menuza Core Team
-* **Ecosystem**: Botchain Network
+* **Ecosystem**: BOT Chain Mainnet
 
 ---
 
@@ -27,14 +29,14 @@
 * **Zero-Wallet Diners**: Customers scan a QR code and browse instantly with 0 wallet friction.
 * **Cryptographic Ownership**: Only the restaurant’s private key can alter prices or delist dishes.
 * **1-Click Availability**: Real-time "Sold Out" toggling on-chain keeps kitchen and guests synchronized.
-* **No Database / Serverless**: 100% on-chain state on Botchain with permanent uptime.
+* **No Database / Serverless**: 100% on-chain state on BOT Chain Mainnet with permanent uptime.
 
 ---
 
 ## Slide 4: Product Experience
 * **Restaurant Owner Portal**:
   * Real-time metrics (Total Items, Available, Sold Out).
-  * Quick modal to add dishes with categories and BOHR pricing.
+  * Quick modal to add dishes with categories and BOT pricing.
   * Instant availability toggles and edit controls.
 * **Customer Menu**:
   * Category pill filtering (Mains, Drinks, Desserts, Specials).
@@ -47,7 +49,7 @@
 ## Slide 5: Technical Highlights
 * **Solidity Smart Contract (`Menuza.sol`)**:
   * Tested with 18 automated Hardhat unit tests (100% passing).
-  * Deployed & verified on BotchainScan: `0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19`.
+  * Deployed & verified on BotchainScan: [`0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19`](https://scan.botchain.ai/address/0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19#code).
   * Gas-optimized custom errors: `EmptyItemName`, `InvalidPrice`, `ItemNotFound`, `Unauthorized`.
 * **Frontend Architecture**:
   * Next.js 14 App Router, TypeScript, Tailwind CSS.
@@ -65,7 +67,7 @@
 
 ---
 
-## Slide 7: Why Botchain?
+## Slide 7: Why BOT Chain?
 * **High Throughput & Sub-Second Finality**: Essential for fast kitchen updates.
 * **Negligible Gas Costs**: Updating a menu costs fractions of a cent, beating Web2 SaaS pricing.
 * **EVM Compatibility**: Seamless MetaMask integration and reliable developer tooling.
@@ -75,7 +77,7 @@
 ## Slide 8: Business & Sustainability
 * **Core Protocol**: Free and open source (MIT license) as public good infrastructure.
 * **Value-Add Monetization**:
-  * Custom ENS / Botchain domain mapping for restaurants.
+  * Custom domain mapping for restaurants.
   * Physical NFC wooden/acrylic table tap hardware sales.
   * Enterprise multi-location kitchen analytics.
 
@@ -83,11 +85,12 @@
 
 ## Slide 9: Roadmap
 * **Q4 2026 (Completed)**:
-  * Contract deployment & verification on Botchain Testnet.
+  * Contract deployment & verification on BOT Chain Mainnet (Chain ID 677).
   * Complete Next.js frontend with wallet-free browsing.
+  * Ecosystem integration with `https://botchain.ai` & `https://scan.botchain.ai`.
 * **Q1 2027**:
-  * Mainnet launch on Botchain.
   * Printable dynamic QR generation inside owner portal.
+  * Multi-menu support (Breakfast, Lunch, Dinner).
 * **Q2 2027**:
   * POS & thermal kitchen printer webhook listeners.
   * Multi-language AI menu translation stored on IPFS.
@@ -95,8 +98,8 @@
 ---
 
 ## Slide 10: Summary & Links
-* **Live App**: [Menuza Web App](https://github.com/liljhnxn/menuza)
-* **Contract Explorer**: [BotchainScan Verified Contract](https://scan.botchain.ai/address/0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19#code)
+* **BOT Chain Website**: [https://botchain.ai](https://botchain.ai)
+* **BOT Chain Explorer**: [https://scan.botchain.ai](https://scan.botchain.ai)
+* **Contract Explorer**: [BotchainScan Verified Contract (0x8666...dd19)](https://scan.botchain.ai/address/0x866630e38A98eEc2cD612A1B46dFFA9E8e33dd19#code)
 * **GitHub Repository**: [github.com/liljhnxn/menuza](https://github.com/liljhnxn/menuza)
 * **Contact**: [johnsonferanmi408@gmail.com](mailto:johnsonferanmi408@gmail.com)
-

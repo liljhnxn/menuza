@@ -4,7 +4,7 @@ pragma solidity ^0.8.20;
 /**
  * @title Menuza
  * @dev Simple, lightweight on-chain digital menu application for restaurants, cafes and food vendors.
- * Deployed to Botchain Testnet (Chain ID 968).
+ * Deployed to Botchain Mainnet (Chain ID 677).
  */
 contract Menuza {
     struct MenuItem {
@@ -61,7 +61,7 @@ contract Menuza {
      * @notice Add a new menu item
      * @param name Name of the dish or drink
      * @param description Brief description of ingredients/flavor
-     * @param price Price of the item (in wei or Bohr native unit)
+     * @param price Price of the item (in wei or BOT native unit)
      * @param category Category (e.g., Main, Drink, Dessert, Starter)
      */
     function addItem(

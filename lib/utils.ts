@@ -1,6 +1,6 @@
 import { formatEther } from "viem";
 
-export function formatBohrPrice(weiPrice: bigint | undefined | null, symbol = "BOT"): string {
+export function formatPrice(weiPrice: bigint | undefined | null, symbol = "BOT"): string {
   if (weiPrice === undefined || weiPrice === null) return `0.00 ${symbol}`;
   try {
     const formatted = formatEther(weiPrice);
@@ -12,7 +12,7 @@ export function formatBohrPrice(weiPrice: bigint | undefined | null, symbol = "B
   }
 }
 
-export function formatAddress(address: string): string {
+export function formatAddress(address: string | undefined | null): string {
   if (!address) return "";
   if (address.length <= 10) return address;
   return `${address.slice(0, 6)}...${address.slice(-4)}`;
